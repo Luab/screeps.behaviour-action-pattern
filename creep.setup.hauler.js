@@ -14,6 +14,10 @@ setup.maxCount = function(spawn){
         if( spawn.room.links.length > 2) count = 1;
         else count = 2;
     }
+    
+    let csum = spawn.room.containerIn.map(e => _.sum(e.store)).reduce((a, b) => a+b, 0);
+    count += Math.floor(csum / 2000);
+
     return count; 
 };
 setup.maxWeight = function(spawn){
