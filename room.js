@@ -473,7 +473,8 @@ var mod = {
                     if( _.isUndefined(this._minerals) ){
                         this._minerals = [];
                         let add = id => { addById(this._minerals, id); };
-                        this.memory.minerals.forEach(add);
+                        if (this.memory.minerals ==! undefined)
+                            this.memory.minerals.forEach(add);
                     }
                     return this._minerals;
                 }
